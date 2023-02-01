@@ -1,0 +1,175 @@
+@font-face {
+    font-family: "Gilroy";
+    src: local("Gilroy-Light"),
+     url("./fonts/Gilroy-FREE/Gilroy-Light.otf") format("truetype");
+    font-weight: light;
+    }
+:root {
+    --main-bg-color: #fff;
+    --main-txt-color: #000;
+    --header-hover-bg: #000;
+    --header-hover-txt: #fff;
+    --header-height: 600px;
+    --body-width: 1200px;
+    }
+#body {
+/* position: absolute; */
+left: 0;
+top: 0;
+width: var(--body-width);
+height: 100vh;
+/* border: 1px solid red; */
+margin: auto;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    width: var(--body-width);
+    height: var(--header-height);
+    background: url('assets/Rex_Entropy_Hero_Star_Bg.png') repeat;
+    background-size: 200%;
+    animation: slideBG 6s infinite ease;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    margin-top: 1em;
+    box-shadow: -5px -5px 15px 5px rgba(107, 105, 105, 0.322);
+}
+
+.hero-wrap{
+    position: relative;
+    display: flex;
+    height: var(--header-height);
+    width: var(--body-width);
+    flex-direction: column ;
+    margin: auto;
+    /* background: url('assets/Rex_Entropy_Hero_Box.png'); */
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-attachment: fixed;
+     /* background-position: center; */
+     background-position:top 0% left  48%;
+     overflow: visible;
+     /* box-shadow: inset -4px -5px 15px 10px rgba(224, 224, 224, 0); */
+} 
+#hero-logo {
+    position: relative;
+    /* width: 600px; */
+    height: auto;
+    margin: auto;
+    z-index: 10;
+}
+#hero-copy {
+    margin: auto;
+    opacity: 0.6;
+}
+#hero-logo img{
+    margin: auto;
+    width: 600px;
+    height: auto;
+    /* transition: animation linear; */
+    animation: logoRide 10s infinite linear;
+}
+#hero-icon {
+    position: relative;
+    right: 0;
+    bottom: 0%;
+    z-index: 10;
+  
+}
+
+#hero-icon img{
+    position: absolute;
+    width: 100px;
+    height: auto;
+    right: 0;
+    bottom: 0%; 
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: var(--main-bg-color);
+    width: 100%;
+    height: 50px;
+    /* border: 1px solid red; */
+    box-shadow: 0px 10px 15px 5px rgba(107, 105, 105, 0.322);
+    border-radius: 0 0 10px 10px ;
+}
+nav ul{
+    display: flex;
+    /* flex-direction: row; */
+    /* justify-content: space-evenly; */
+    align-items: center;
+    color: var(--main-txt-color);
+    font-family: Gilroy;
+}
+nav li{
+    list-style: none;
+    padding: 0 .5em;
+    margin: .5em;
+    cursor: pointer;
+}
+nav li:not(:last-child) { 
+    border-right:  1px solid #868686;
+
+   }
+nav li:first-child{ 
+   border-radius: 5px 0 0 0;
+   }
+nav li:last-child{ 
+    border-radius:  0 5px 0 0;
+   }
+nav li:hover{
+    list-style: none;
+    background-color: var(--header-hover-bg);
+    color: var(--header-hover-txt);
+   
+}
+/* ====================
+Generals
+
+========================*/
+
+.center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    
+}
+
+/* ====================
+Animations
+
+========================*/
+@keyframes slideBG {
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        /* transition: transform 2s linear; */
+        background-position-x: 100%;
+    } 
+}
+
+@keyframes logoRide{
+    0%{
+       transform: rotate(0deg)
+    }
+    25%{
+       transform: rotate(0deg)
+    }
+    75%{
+       transform: rotate(-5deg)
+    }
+    /* 80%{
+        transform: rotate(2deg)
+    } */
+    100%{
+        transform: rotate(0deg)
+    }
+    
+}
