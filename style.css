@@ -9,20 +9,28 @@
     --main-txt-color: #000;
     --header-hover-bg: #000;
     --header-hover-txt: #fff;
+    /* --body-width: 1200px; */
+    --body-width: 95%;
     --header-height: 600px;
-    --body-width: 1200px;
+    --content-height: 500px;
+    --content-width: 100%;
+    /* --content-width: 1194px; */
     }
 #body {
-/* position: absolute; */
-left: 0;
-top: 0;
-width: var(--body-width);
-height: 100vh;
-/* border: 1px solid red; */
-margin: auto;
+    left: 0;
+    top: 0;
+    width: var(--body-width);
+    height: 100vh;
+    margin: auto;
+    overflow: hidden;
 }
+/* ====================
+Header
 
-header{
+========================*/
+
+
+ header{
     display: flex;
     flex-direction: column;
     width: var(--body-width);
@@ -30,13 +38,17 @@ header{
     background: url('assets/Rex_Entropy_Hero_Star_Bg.png') repeat;
     background-size: 200%;
     animation: slideBG 6s infinite ease;
-    overflow: hidden;
+    /* overflow: hidden; */
     border-radius: 10px 10px 0 0;
     margin-top: 1em;
+    margin: auto;
     box-shadow: -5px -5px 15px 5px rgba(107, 105, 105, 0.322);
     transition: height .4s ease-in-out;
 }
+/* ====================
+Heero
 
+========================*/
 .hero-wrap{
     position: relative;
     display: flex;
@@ -51,32 +63,36 @@ header{
      /* background-position: center; */
      background-position:top 0% left  48%;
      overflow: visible;
-     /* box-shadow: inset -4px -5px 15px 10px rgba(224, 224, 224, 0); */
 } 
+
 #hero-logo {
     position: relative;
-    /* width: 600px; */
+    width: 50%;
+    min-width: 300px;
     height: auto;
     margin: auto;
     z-index: 10;
 }
+
 #hero-copy {
     margin: auto;
     opacity: 0.6;
 }
+
 #hero-logo img{
     margin: auto;
-    width: 600px;
+    width: 100%;
+    min-width: 300px;
     height: auto;
-    /* transition: animation linear; */
     animation: logoRide 10s infinite linear;
 }
+
 #hero-icon {
     position: relative;
     right: 0;
     bottom: 0%;
-    z-index: 10;
-  
+    z-index: 10;  
+    transition: position .3s ease-in;
 }
 
 #hero-icon img{
@@ -86,17 +102,27 @@ header{
     right: 0;
     bottom: 0%; 
 }
+/* ====================
+Nav
+
+========================*/
 nav {
+    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     background-color: var(--main-bg-color);
     width: 100%;
+    width: var(--body-width);
     height: 50px;
-    /* border: 1px solid red; */
+    z-index: 2000;
     box-shadow: 0px 10px 15px 5px rgba(107, 105, 105, 0.322);
     border-radius: 0 0 10px 10px ;
 }
+#nav {   
+    z-index: 2000;
+}
+
 nav ul{
     display: flex;
     /* flex-direction: row; */
@@ -127,6 +153,40 @@ nav li:hover{
     color: var(--header-hover-txt);
    
 }
+/* ====================
+Content
+
+========================*/
+#content-wrap {
+    display: flex;
+    /* position: relative; */
+
+    margin: auto;
+    /* bottom: 50px; */
+    /* left: 0;  */
+    width: 1194px;
+    height: 500px;
+    /* width: var(--content-width);
+    height: var(--content-height); */
+    background-color: rgba(0, 0, 0, 0.649);
+    border: 3px solid  #000;
+    border-radius: 10px 10px 0 0;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    /* display: hidden; */
+}
+
+.show{
+    /* display: inherit; */
+    visibility: visible;
+    opacity: 1;
+    bottom: 0px;
+    transform: translateY(-550px);
+    z-index: 100;
+    transition: opacity .3s ease-in-out;
+}
+
 /* ====================
 Generals
 
