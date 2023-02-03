@@ -1,9 +1,9 @@
 let navBtns = document.querySelectorAll('.nav-btn')
-    let contentWrap = document.getElementById("content-wrap")
-    let r = document.querySelector(':root')
+let heroLogo = document.getElementById("hero-logo")
+let contentWrap = document.querySelector(".modal-fx")
+let r = document.querySelector(':root')
 
 document.addEventListener("load",()=>{
-
     navBtns = document.querySelectorAll('.nav-btn')
     contentWrap = document.getElementById("content-wrap")
 })
@@ -14,14 +14,16 @@ document.addEventListener("load",()=>{
             height = window.innerHeight-80;
             r.style.setProperty('--header-height',` ${height}px`)
             contentWrap.classList.toggle("show")
+            heroLogo.classList.toggle("hero-logo-shink")
             console.log('Toggle open')
             expand = true
         }
         else  if(expand){
             r.style.setProperty('--header-height', '600px')
             contentWrap.classList.toggle("show")
+            heroLogo.classList.toggle("hero-logo-shink")
             console.log('Toggle closed')
-            expand = false
+            expand = false 
         }
         console.log('toggleExpand',e.target.innerHTML)
         
