@@ -37,7 +37,11 @@ function toggleExpand(e){
 }
 function fillFrame(tag){
     // document.getElementById('contentFrame').src = './assets/loading-bar.gif';
-    document.getElementById('content-header').innerHTML =`<h2>${tag}</h2>`;
+    document.getElementById('content-header').innerHTML =`<h2>${tag}</h2>
+     <div id="modal-close-btn" >
+                    <img src="./assets/arrow-circle-down.svg" alt="close icon">
+                </div> 
+    `;
 }
 function handleNavCLick(e){
     // console.log('handleNavCLick',e.target.innerHTML)
