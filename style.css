@@ -108,6 +108,7 @@ Nav
 
 ========================*/
 nav {
+  position: relative;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -299,6 +300,12 @@ Content
   height: 860px;
   min-height: 860px;
   /* border: 4px solid blue; */
+}
+#contentFrame-tincan {
+  width: 500px;
+  min-width: 400px;
+  height: 750px;
+  /* max-height: 700px; */
 }
 iframe[id^="contentFrame"] {
   zoom: 0.75;
